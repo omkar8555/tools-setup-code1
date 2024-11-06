@@ -1,4 +1,4 @@
-variable "tools" = {
+variable "tools" {
          default = {
              vault = {
                  port          = 8200
