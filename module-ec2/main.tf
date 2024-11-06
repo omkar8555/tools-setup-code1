@@ -28,9 +28,6 @@ resource "aws_security_group" "sg" {
    tags = {
        Name = "${var.tool_name}-sg"
        }
-   root_block_device {
-       volume_size = var.volume_size
-       }
    }
 
   resource "aws_instance" "instance" {
@@ -40,6 +37,9 @@ resource "aws_security_group" "sg" {
       tags = {
           Name = var.tool_name
           }
+      root_block_device {
+             volume_size = var.volume_size
+             }
       }
 
 
