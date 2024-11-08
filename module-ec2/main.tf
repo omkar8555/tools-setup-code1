@@ -11,8 +11,8 @@ resource "aws_security_group" "sg" {
     }
 
   egress {
-      from_port        = sg_port
-      to_port          = sg_port
+      from_port        = var.sg_port
+      to_port          = var.sg_port
       protocol         = "TCL"
       cidr_blocks      = ["0.0.0.0/0"]
 
@@ -44,7 +44,7 @@ tags =  {
 
   resource "aws_route53_record" "record-private" {
         zone_id = var.zone_id
-        name = ${var.tool_name}.${var.domain_name}
+        name =  "${var.tool_name}.${var.domain_name}"
         type = "A"
         ttl ="30"
         records = [ aws_instance.instance.private_id]
