@@ -47,12 +47,12 @@ tags =  {
         name =  "${var.tool_name}.${var.domain_name}"
         type = "A"
         ttl ="30"
-        records = [ aws_instance.instance.private_id]
+        records = [ aws_instance.instance.private_ip]
         }
     resource "aws_route53_record" "record-internal" {
           zone_id = var.zone_id
           name = "${var.tool_name}.internal.${var.domain_name}"
           type = "A"
           ttl ="30"
-          records = [ aws_instance.instance.public_id]
+          records = [ aws_instance.instance.public_ip]
           }
