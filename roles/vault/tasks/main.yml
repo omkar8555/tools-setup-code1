@@ -1,0 +1,26 @@
+- name: set prompt
+  ansible.builtin.shell: set-prompt  {{ tool_name }}
+
+- name : download hashicorp repofile
+  ansible.builtin.get_url:
+    url: https://rpm.releases.hashicorp.com/RHEL/hashicorp.repo
+    dest: /etc/yml.repos.d/hasicorp.repo
+
+- name: install vault
+  ansible.builtin.dnf:
+    name: vault
+    status: installed
+
+- name: copy vault config
+  ansible.builtin.copy:
+    src: vault.hcl
+    dest: /etc/vault.d/vault.hcl
+
+- name: start vault services
+  ansible.builtin.systemd_service:
+    name: vault
+    status: restart
+
+
+
+
