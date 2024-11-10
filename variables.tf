@@ -12,5 +12,5 @@ variable "zone_id" {
     }
 
 variable "domain_name"  {
-    default = "rdevopsb2.shop"
+    default = "rdevopsb72.shop"
     }
