@@ -51,7 +51,7 @@ tags =  {
         }
     resource "aws_route53_record" "record-internal" {
           zone_id = var.zone_id
-          name = "${var.tool_name}.internal.${var.domain_name}"
+          name = "${var.tool_name}-internal.${var.domain_name}"
           type = "A"
           ttl ="30"
           records = [ aws_instance.instance.public_ip]
