@@ -5,7 +5,7 @@ resource "aws_security_group" "sg" {
   ingress {
       from_port        = 22
       to_port          = 22
-      protocol         = "TCL"
+      protocol         = "TCP"
       cidr_blocks      = ["0.0.0.0/0"]
 
     }
@@ -13,7 +13,7 @@ resource "aws_security_group" "sg" {
   egress {
       from_port        = var.sg_port
       to_port          = var.sg_port
-      protocol         = "TCL"
+      protocol         = "TCP"
       cidr_blocks      = ["0.0.0.0/0"]
 
     }
@@ -33,9 +33,9 @@ tags =  {
   resource "aws_instance" "instance" {
       ami = data.aws_ami.ami.id
       instance_type = var.instance_type
-      vpc_security_group_ids =["aws_security_group.sg.id"]
+      vpc_security_group_ids =[aws_security_group.sg.id]
       tags = {
-          Name = "${var.tool_name}"
+          Name = var.tool_name
           }
       root_block_device  {
           volume_size = var.volume_size
