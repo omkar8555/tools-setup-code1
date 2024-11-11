@@ -10,7 +10,7 @@ resource "aws_security_group" "sg" {
 
     }
 
-  egress {
+  ingress {
       from_port        = var.sg_port
       to_port          = var.sg_port
       protocol         = "TCP"
