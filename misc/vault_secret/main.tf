@@ -51,7 +51,7 @@ resource "vault_generic_secret" "user" {
   path = "${vault_mount.roboshop-dev.path}/user"
 
   data_json = <<EOT
-  {"MONGO": true,
+  {"MONGO": "true",
       "REDIS_URL": "redis://redis-dev.rdevopsb72.shop:6379",
       "MONGO_URL": "mongodb://mongodb-dev.rdevopsb72.shop:27017/catalogue"
 
