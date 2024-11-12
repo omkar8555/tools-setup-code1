@@ -40,7 +40,7 @@ resource "vault_generic_secret" "frontend" {
 
     data_json = <<EOT
     { "MONGO": true,
-      "MONGO_URL": "mongodb://mongodb-dev.rdevopsb72.shop:27017/catalogue"
+      "MONGO_URL": "mongodb://mongodb-dev.rdevopsb72.shop:27017/catalogue",
        "mysql_root_password": "RoboShop@1"
 
        }
@@ -82,12 +82,12 @@ resource "vault_generic_secret" "payment" {
 path = "${vault_mount.roboshop-dev.path}/payment"
 
 data_json = <<EOT
-{"CART_HOST": "cart-dev.rdevopsb72.shop"
- "CART_PORT": "8080"
- "USER_HOST": "user-dev.rdevopsb72.shop"
- "USER_PORT": "8080"
- "AMQP_HOST": "rabbitmq-dev.rdevopsb72.shop"
- "AMQP_USER": "roboshop"
+{"CART_HOST": "cart-dev.rdevopsb72.shop",
+ "CART_PORT": "8080",
+ "USER_HOST": "user-dev.rdevopsb72.shop",
+ "USER_PORT": "8080",
+ "AMQP_HOST": "rabbitmq-dev.rdevopsb72.shop",
+ "AMQP_USER": "roboshop",
  "AMQP_PASS": "roboshop123"
    }
 EOT
@@ -105,7 +105,7 @@ resource "vault_generic_secret" "mysql" {
     path = "${vault_mount.roboshop-dev.path}/rabbitmq"
 
     data_json = <<EOT
-    {"user": "roboshop"
+    {"user": "roboshop",
       "password": "roboshop123"
        }
     EOT
