@@ -63,18 +63,19 @@ resource "vault_generic_secret" "user" {
     path = "${vault_mount.roboshop-dev.path}/cart"
 
     data_json = <<EOT
-    {"REDIS_HOST": "redis-dev.rdevopsb72.shop",
-     "CATALOGUE_HOST": "catalogue-dev.rdevopsb72.shop"
-     "CATALOGUE_PORT": "8080"
-       }
-    EOT
-    }
+  {
+    "REDIS_HOST": "redis-dev.rdevopsb72.shop",
+    "CATALOGUE_HOST" : "catalogue-dev.rdevopsb72.shop",
+    "CATALOGUE_PORT" : "8080"
+  }
+  EOT
+  }
 resource "vault_generic_secret" "shipping" {
   path = "${vault_mount.roboshop-dev.path}/shipping"
 
   data_json = <<EOT
-  {"CART_ENDPOINT": "cart-{{ env }}.rdevopsb72.shop:8080",
-    "DB_HOST: "mysql-{{ env }}.rdevopsb72.shop"
+  {"CART_ENDPOINT": "cart-dev.rdevopsb72.shop:8080",
+    "DB_HOST": "mysql-dev.rdevopsb72.shop"
      }
   EOT
   }
