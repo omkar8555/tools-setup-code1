@@ -40,7 +40,7 @@ resource "vault_generic_secret" "frontend" {
 
     data_json = <<EOT
     { "MONGO": true,
-      "MONGO_URL": "mongodb://mongodb-dev.rdevopsb72.shop:27017/catalogue",
+      "MONGO_URL": "mongodb://mongodb-dev.rdevopsb72.shop:27017/catalogue"
 
 
        }
@@ -75,7 +75,7 @@ resource "vault_generic_secret" "shipping" {
 
   data_json = <<EOT
   {"CART_ENDPOINT": "cart-dev.rdevopsb72.shop:8080",
-    "DB_HOST": "mysql-dev.rdevopsb72.shop"
+    "DB_HOST": "mysql-dev.rdevopsb72.shop",
      "mysql_root_password": "RoboShop@1"
      }
   EOT
