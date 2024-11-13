@@ -74,7 +74,7 @@ resource "vault_generic_secret" "shipping" {
 
   data_json = <<EOT
   {"CART_ENDPOINT": "cart-{{ env }}.rdevopsb72.shop:8080",
-   "Environment": "DB_HOST=mysql-{{ env }}.rdevopsb72.shop"
+    "DB_HOST: "mysql-{{ env }}.rdevopsb72.shop"
      }
   EOT
   }
