@@ -65,6 +65,7 @@ resource "vault_generic_secret" "user" {
     data_json = <<EOT
     {"REDIS_HOST": "redis-dev.rdevopsb72.shop",
      "CATALOGUE_HOST": "catalogue-dev.rdevopsb72.shop"
+     "CATALOGUE_PORT": "8080"
        }
     EOT
     }
